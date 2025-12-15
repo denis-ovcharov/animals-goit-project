@@ -5,20 +5,27 @@
         <use href="../img/sprite.svg#icon-close-btn"></use>
       </svg>
     </button>
-    <h2 class="modal-order-title">Залишіть заявку на знайомство</h2>
+    <h2 class="modal-order-title">
+      Залишіть <br />
+      заявку на <br />
+      знайомство
+    </h2>
 
     <form class="modal-order-form" data-modal-order-form>
       <div class="form-field-wrapper">
         <label class="form-field-label" for="username">Ім’я*</label>
-        <input
-          class="form-field-text-input"
-          name="user-name"
-          id="user-name"
-          type="text"
-          placeholder="Андрій"
-          required
-        />
+        <div>
+          <input
+            class="form-field-text-input"
+            name="user-name"
+            id="user-name"
+            type="text"
+            placeholder="Андрій"
+            required
+          />
+        </div>
       </div>
+
       <div class="form-field-wrapper">
         <label class="form-field-label" for="field-number">Телефон*</label>
         <div class="form-field-input-wrapper">
@@ -31,6 +38,7 @@
             required
           />
         </div>
+      </div>
         <div class="form-field-comment-wrapper">
           <label class="form-field-label" for="user-comment">Коментар</label>
           <textarea
