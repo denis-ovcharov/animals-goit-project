@@ -4,6 +4,8 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
+    padding-top: 80px;
+    padding-bottom: 80px;
 }
 
 .about-us-title{
@@ -166,7 +168,7 @@
 
     .swiper-buttons-container {
         position: absolute;
-        top: 250px;
+        top: 340px;
         width: 100%;
         min-width: 798px;
         max-width: 809px;
@@ -201,8 +203,12 @@
     }
 
     .swiper-buttons-container {
-        top: 434px;
+        top: 510px;
         max-width: 1410px;
         min-width: 1410px;
+    }
+
+    .controls-wrapper{
+        margin-top: 24px;
     }
 }
