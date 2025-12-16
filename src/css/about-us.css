@@ -38,7 +38,7 @@
     }
 }
 
-.slide-bg-1 {
+#about-us .slide-bg-1 {
     background-image: -webkit-image-set(
         url('../img/about-us/slide-1-min-min.jpg') 1x,
         url('../img/about-us/slide-1@2x-min-min.jpg') 2x
@@ -49,7 +49,7 @@
     );
 }
 
-.slide-bg-2 {
+#about-us.slide-bg-2 {
     background-image: -webkit-image-set(
         url('../img/about-us/slide-2-min-min-mobile.jpg') 1x,
         url('../img/about-us/slide-2@2x-min-min-mobile.jpg') 2x
@@ -60,7 +60,7 @@
     );
 }
 
-.slide-bg-3 {
+#about-us .slide-bg-3 {
     background-image: -webkit-image-set(
         url('../img/about-us/slide-3-min-min-mobile.jpg') 1x,
         url('../img/about-us/slide-3@2x-min-min-mobile.jpg') 2x
@@ -71,7 +71,7 @@
     );
 }
 
-.slide-bg-4 {
+#about-us .slide-bg-4 {
     background-image: -webkit-image-set(
         url('../img/about-us/slide-4-min-min.jpg') 1x,
         url('../img/about-us/slide-4@2x-min-min.jpg') 2x
@@ -82,7 +82,7 @@
     );
 }
 
-.slide-bg-5 {
+#about-us .slide-bg-5 {
     background-image: -webkit-image-set(
         url('../img/about-us/slide-5-min-min.jpg') 1x,
         url('../img/about-us/slide-5@2x-min-min.jpg') 2x
@@ -95,7 +95,7 @@
 
 @media only screen and (min-width: 768px) {
 
-    .slide-bg-1 {
+    #about-us .slide-bg-1 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-1-min-min.jpg') 1x,
             url('../img/about-us/slide-1@2x-min-min.jpg') 2x
@@ -106,7 +106,7 @@
         );
     }
 
-    .slide-bg-2 {
+    #about-us .slide-bg-2 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-2-min-min.jpg') 1x,
             url('../img/about-us/slide-2@2x-min-min.jpg') 2x
@@ -117,7 +117,7 @@
         );
     }
 
-    .slide-bg-3 {
+    #about-us .slide-bg-3 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-3-min-min.jpg') 1x,
             url('../img/about-us/slide-3@2x-min-min.jpg') 2x
@@ -127,8 +127,8 @@
             url('../img/about-us/slide-3@2x-min-min.jpg') 2x
         );
     }
-    
-    .slide-bg-4 {
+
+    #about-us .slide-bg-4 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-4-min-min.jpg') 1x,
             url('../img/about-us/slide-4@2x-min-min.jpg') 2x
@@ -139,7 +139,7 @@
         );
     }
 
-    .slide-bg-5 {
+    #about-us .slide-bg-5 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-5-min-min.jpg') 1x,
             url('../img/about-us/slide-5@2x-min-min.jpg') 2x
@@ -152,7 +152,7 @@
 }
 
 @media only screen and (min-width: 1440px) {
-    .slide-bg-1 {
+    #about-us .slide-bg-1 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-1-min-min.jpg') 1x,
             url('../img/about-us/slide-1@2x-min-min.jpg') 2x
@@ -163,7 +163,7 @@
         );
     }
 
-    .slide-bg-2 {
+    #about-us .slide-bg-2 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-2-min-min.jpg') 1x,
             url('../img/about-us/slide-2@2x-min-min.jpg') 2x
@@ -174,7 +174,7 @@
         );
     }
 
-    .slide-bg-3 {
+    #about-us .slide-bg-3 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-3-min-min.jpg') 1x,
             url('../img/about-us/slide-3@2x-min-min.jpg') 2x
@@ -185,7 +185,7 @@
         );
     }
 
-    .slide-bg-4 {
+    #about-us .slide-bg-4 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-4-min-min.jpg') 1x,
             url('../img/about-us/slide-4@2x-min-min.jpg') 2x
@@ -196,7 +196,7 @@
         );
     }
 
-    .slide-bg-5 {
+    #about-us   .slide-bg-5 {
         background-image: -webkit-image-set(
             url('../img/about-us/slide-5-min-min.jpg') 1x,
             url('../img/about-us/slide-5@2x-min-min.jpg') 2x
@@ -238,13 +238,13 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
-    width: 335px;
+    max-width: 335px;
     height: 64px;
 }
 
 #about-us .swiper-pagination {
     position: static !important;
-    width: auto !important;
+    max-width: auto !important;
     margin: 0 !important;
     display: flex;
     align-items: center;
@@ -269,7 +269,7 @@
 #about-us .swiper-buttons-container {
     display: flex !important;
     gap: 12px;
-    width: auto;
+    max-width: auto;
     height: 48px !important;
 }
 
@@ -282,8 +282,8 @@
     border: 1px solid #c3b49d;
     border-radius: 8px;
     background: #eee9e3;
-    width: 48px !important;
-    height: 48px !important;
+    max-width: 48px !important;
+    max-height: 48px !important;
     padding: 12px;
     position: static !important;
     display: flex;
@@ -330,7 +330,7 @@
 
     #about-us .controls-wrapper {
         justify-content: center; 
-        width: 100%;
+        max-width: 100%;
         margin-top: 0;
     }
 
