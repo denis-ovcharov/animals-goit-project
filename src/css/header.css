@@ -11,12 +11,14 @@
 .header-logo {
     display: block;
 }
-
+.header-logo-svg {
+    fill: #332c22;
+}
 .header-logo:hover,
 .header-logo:focus {
-    background-color: black;
-    fill: white;
-    border-radius: 8px;
+  color: var(--color-mariner-darkest);
+  opacity: 0.85;
+  transform: translateY(-1px);
 }
 
 .nav-btn-link {
