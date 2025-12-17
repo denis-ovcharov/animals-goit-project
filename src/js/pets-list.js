@@ -1,189 +1,191 @@
-import axios from 'axios';
-
-async function initHomePage() {
-  updateLimit();
+import { getCategories, getAnimals } from './api.js';
+import { openModalOrder } from './modal-order.js';
+import { openPetModal } from './modal-animal-details.js';
+//!=============================================================
+let currentPage = 1;
+let totalPages = 1;
+let limit = 8;
+let currentCategoryId = '';
+let allAnimals = [];
+//!=============================================================
+export async function initPetsList() {
   const categories = await getCategories();
-  renderCategoryList(categories);
-  const { animals } = await getAnimals();
-  renderAnimalsList(animals);
-  loadAnimals(true);
+
+  const CATEGORY_ORDER = [
+    'Собаки',
+    'Коти',
+    'Кролики',
+    'Гризуни',
+    'Птахи',
+    'Тварини з особливими потребами',
+    'Терміново шукають дім',
+  ];
+  const sortedCategories = [...categories].sort((a, b) => {
+    const aIndex = CATEGORY_ORDER.indexOf(a.name);
+    const bIndex = CATEGORY_ORDER.indexOf(b.name);
+    if (aIndex === -1) return 1;
+    if (bIndex === -1) return -1;
+    return aIndex - bIndex;
+  });
+  renderCategories(sortedCategories);
+  await loadAnimals();
 }
-
-document.addEventListener(`DOMContentLoaded`, initHomePage);
-
-const URL = 'https://paw-hut.b.goit.study';
-
-const animalsURL = `${URL}/api/animals`;
-const categoriesURL = `${URL}/api/categories`;
-
-async function getCategories() {
-  const response = await axios.get(categoriesURL);
-  return response.data;
-}
-
+//!=============================================================
 const refs = {
-  categoriesList: document.querySelector(`.pets-filters`),
-  animalsList: document.querySelector(`.pets-list`),
+  petsFilters: document.querySelector('.pets-filters'),
+  petsList: document.querySelector('.pets-list'),
   loadMoreBtn: document.querySelector('.load-more'),
-  loader: document.querySelector('.loader'),
+  loaderPetsList: document.querySelector('.loader'),
 };
-
-let currentCategory = '';
-let page = 1;
-let LIMIT = 9;
-
-function updateLimit() {
-  if (window.innerWidth >= 1440) {
-    LIMIT = 9; // desktop
-  } else {
-    LIMIT = 8; // tablet + mobile
+//!=============================================================
+export function renderCategories(categories) {
+  const allCategories = [{ name: 'Всі', _id: '' }, ...categories];
+  const markup = allCategories
+    .map(
+      c =>
+        `<li class="pets-filters-item"><button class="pets-filters-btn" data-category-id="${c._id}">${c.name}</button></li>`
+    )
+    .join('');
+  refs.petsFilters.innerHTML = markup;
+  const firstCategoryButton = document.querySelector('.pets-filters-btn');
+  if (firstCategoryButton) {
+    firstCategoryButton.classList.add('pets-filters-btn-active');
   }
 }
-
-window.addEventListener('resize', () => {
-  const prevLimit = LIMIT;
-  updateLimit();
-
-  if (prevLimit !== LIMIT) {
-    // якщо потрібно перезавантажити список
-    page = 1;
-    refs.animalsList.innerHTML = '';
-    loadAnimals(true);
-  }
-});
-
-async function loadAnimals(reset = false) {
-  if (reset) {
-    page = 1;
-    refs.animalsList.innerHTML = '';
-    refs.loadMoreBtn.classList.add(`hidden`);
-  }
-
+//!=============================================================
+export function renderAnimals(animals) {
+  const markup = animals
+    .map(
+      ({
+        _id,
+        name,
+        image,
+        species,
+        age,
+        gender,
+        shortDescription,
+        categories,
+      }) => {
+        const categoriesMarkup = categories
+          .map(c => `<p class="pet-category">${c.name}</p>`)
+          .join('');
+        return `
+        <li class="pet-card">
+          <img class="pet-img" src="${image}" alt="${name}" />
+          <div class="pet-info">
+            <p class="pet-type">${species}</p>
+            <h3 class="pet-name">${name}</h3>
+            <div class="pet-categories">${categoriesMarkup}</div>
+            <ul class="pet-meta">
+              <li>${age}</li>
+              <li>${gender}</li>
+            </ul>
+            <p class="pet-descr">${shortDescription}</p>
+            <button class="pet-details-btn" data-id="${_id}">
+              Дізнатись більше
+            </button>
+          </div>
+        </li>
+      `;
+      }
+    )
+    .join('');
+  refs.petsList.insertAdjacentHTML('beforeend', markup);
+}
+//!===============================================================================
+export async function loadAnimals() {
   showLoader();
-
   try {
-    const data = await getAnimals({
-      page,
-      limit: LIMIT,
-      categoryId: currentCategory,
+    const { animals, totalItems } = await getAnimals({
+      page: currentPage,
+      limit,
+      categoryId: currentCategoryId,
     });
 
-    renderAnimalsList(data.animals);
+    allAnimals.push(...animals);
 
-    if (data.animals.length === LIMIT) {
-      refs.loadMoreBtn.classList.remove('hidden');
-    } else {
-      refs.loadMoreBtn.classList.add('hidden');
+    if (animals.length === 0) {
+      hideLoadMoreButton();
+      return;
     }
+    renderAnimals(animals);
 
-    page++;
-  } catch (error) {
-    console.error(error);
+    totalPages = Math.ceil(totalItems / limit);
+    if (currentPage < totalPages) {
+      showLoadMoreButton();
+    } else {
+      hideLoadMoreButton();
+    }
+    currentPage++;
+  } catch (err) {
+    console.error('API error:', err);
   } finally {
     hideLoader();
   }
 }
-
-// Розмітка Фільтрів
-
-function renderCategoryList(categories) {
-  const allCategories = [{ _id: ``, name: `Всі` }, ...categories];
-
-  const murkup = allCategories
-    .map(
-      category => `
-    <li class="categories__item">
-    <button class="categories__btn" type="button" data-category="${category._id}">${category.name}</button>
-    </li>
-    `
-    )
-    .join(``);
-  refs.categoriesList.innerHTML = murkup;
-
-  const firstBtn = refs.categoriesList.querySelector('.categories__btn');
-  if (firstBtn) firstBtn.classList.add('active');
+//!===============================================================================
+export function showLoader() {
+  document.body.style.overflowX = 'hidden';
+  refs.loaderPetsList.classList.remove('visually-hidden');
 }
-
-async function getAnimals({ page = 1, limit = 8, categoryId } = {}) {
-  const params = { page, limit };
-  if (categoryId) {
-    params.categoryId = categoryId;
-    // Если категория выбрана, добавь ее в запрос, если нет, то не добавляй ее вообще.
-    // Потому что, нет категории "ВСЕ"
-  }
-  const response = await axios.get(animalsURL, { params });
-  return response.data;
-  // При вызове передаете в аргументах первой порции карточек page, limit, а для фильтра categoryId
+//!===============================================================================
+export function hideLoader() {
+  refs.loaderPetsList.classList.add('visually-hidden');
 }
-
-// Розмітка галереї
-
-export function renderAnimalsList(animals) {
-  const murkup = animals
-    .map(
-      ({ image, name, species, categories, age, gender, description, id }) => `
-              <li class="pet-card">
-            <img src="${image}" alt="${name}" />
-            <div class="pet-info">
-              <p class="pet-type">${species}</p>
-              <p class="pet-name">${name}</p>
-              <ul class="categories-list">
-              ${categories
-                .map(
-                  cat => `
-                    <li class="categories-item">
-                      <span class="categories-descr">${cat.name}</span>
-                    </li>`
-                )
-                .join('')}
-            </ul>
-
-              <ul class="pet-meta">
-                <li class="pet-age">${age}</li>
-                <li class="pet-gender">${gender}</li>
-              </ul>
-              <p class="pet-description">${description}</p>
-              <button class="details-btn" data-id="${id}">
-                Дізнатись більше
-              </button>
-            </div>
-          </li>`
-    )
-    .join(``);
-  refs.animalsList.insertAdjacentHTML(`beforeend`, murkup);
+//!===============================================================================
+export function showLoadMoreButton() {
+  refs.loadMoreBtn.classList.remove('visually-hidden');
 }
-
-function showLoader() {
-  refs.loader.classList.remove('hidden');
+//!===============================================================================
+export function hideLoadMoreButton() {
+  refs.loadMoreBtn.classList.add('visually-hidden');
 }
-
-function hideLoader() {
-  refs.loader.classList.add('hidden');
+//!===============================================================================
+refs.loadMoreBtn.addEventListener('click', async () => {
+  hideLoadMoreButton();
+  await loadAnimals();
+  scroll();
+});
+//!===============================================================================
+export function scroll() {
+  const firstCard = document.querySelector('.pet-card');
+  if (!firstCard) return;
+  const itemHeight = firstCard.getBoundingClientRect().height;
+  window.scrollBy({
+    top: itemHeight * 2,
+    left: 0,
+    behavior: 'smooth',
+  });
 }
-
-function showLoadMoreButton() {
-  refs.loadMoreBtn.classList.remove('hidden');
-}
-
-function hideLoadMoreButton() {
-  refs.loadMoreBtn.classList.add('hidden');
-}
-
-// EVENTS
-refs.categoriesList.addEventListener('click', e => {
-  const btn = e.target.closest('.categories__btn');
+//!===============================================================================
+refs.petsFilters.addEventListener('click', e => {
+  hideLoadMoreButton();
+  const btn = e.target.closest('.pets-filters-btn');
   if (!btn) return;
 
-  if (btn.classList.contains('active')) return;
-
   document
-    .querySelectorAll('.categories__btn')
-    .forEach(b => b.classList.remove('active'));
+    .querySelectorAll('.pets-filters-btn')
+    .forEach(b => b.classList.remove('pets-filters-btn-active'));
+  btn.classList.add('pets-filters-btn-active');
+  currentCategoryId = btn.dataset.categoryId || '';
+  currentPage = 1;
+  refs.petsList.innerHTML = '';
 
-  btn.classList.add('active');
-
-  currentCategory = btn.dataset.category || '';
-  loadAnimals(true);
+  loadAnimals();
 });
-
-refs.loadMoreBtn.addEventListener('click', () => loadAnimals());
+//!=================================================================================
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('pet-modal-btn')) {
+    openModalOrder();
+  }
+});
+//!======================================================================================
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('pet-details-btn')) {
+    const id = e.target.dataset.id;
+    const animal = allAnimals.find(a => a._id === id);
+    if (!animal) return;
+    openPetModal(animal);
+  }
+});
+//!=======================================================================================
