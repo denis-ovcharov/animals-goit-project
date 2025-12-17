@@ -3,7 +3,6 @@
   padding-top: 48px;
   padding-bottom: 48px;
   padding-left: 0px;
-  padding-right: 20px;
 }
 
 .footer-container {
@@ -28,6 +27,8 @@
   justify-content: center;
   cursor: pointer;
   outline: none;
+  color: var(--color-neutral-darkest, #02060a);
+  transition: color 150ms ease, transform 150ms ease, opacity 150ms ease;
 }
 
 .footer-logo:focus-visible {
@@ -40,6 +41,19 @@
   width: 302px;
   height: auto;
   max-width: 100%;
+  fill: currentColor;
+}
+
+.footer-logo:hover,
+.footer-logo:focus-visible {
+  color: var(--color-mariner-darkest); /* потрібний колір */
+  opacity: 0.85;
+  transform: translateY(-1px);
+}
+
+.footer-logo:active {
+  opacity: 0.75;
+  transform: translateY(0);
 }
 
 /* ===== NAV ===== */
@@ -133,7 +147,7 @@
   text-align: center;
   color: var(--color-neutral-darkest, #02060a);
   white-space: nowrap;
-  height: 50px;
+  padding-top: 32px;
 }
 
 /* ===== TABLET 768+ ===== */
@@ -143,7 +157,6 @@
     padding-top: 48px;
     padding-bottom: 48px;
     padding-left: 0px;
-    padding-right: 32px;
   }
 
   .footer-box {
@@ -170,7 +183,6 @@
     padding-top: 64px;
     padding-bottom: 64px;
     padding-left: 0px;
-    padding-right: 64px;
   }
 
   .footer-nav-link {
