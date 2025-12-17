@@ -5,10 +5,10 @@ import { hideLoader, showLoader } from './pets-list';
 export function openModalOrder() {
   const modalOrder = new basicLightbox.create(
     `
-      <div class="modal-order">
+  <div class="modal-order">
     <button class="modal-order-close-btn" data-modal-order-close>
       <svg class="modal-order-icon" width="8" height="8">
-        <use href="../img/sprite.svg#icon-close-btn"></use>
+        <use href="./img/sprite.svg#icon-close-btn"></use>
       </svg>
     </button>
     <h2 class="modal-order-title">
@@ -52,10 +52,10 @@ export function openModalOrder() {
             placeholder="Напишіть ваш коментар"
           ></textarea>
         </div>
-      </div>
-      <button class="form-submit-btn" type="submit">Надіслати</button>
-    </form>
-  </div> `,
+        <button class="form-submit-btn" type="submit">Надіслати</button>
+        </form>
+  </div>
+   `,
     {
       onShow: modalOrder => {
         document.body.style.overflow = 'hidden';
@@ -70,7 +70,6 @@ export function openModalOrder() {
       },
     }
   );
-
   petModalLightbox?.close();
   showLoader();
   modalOrder.show();
