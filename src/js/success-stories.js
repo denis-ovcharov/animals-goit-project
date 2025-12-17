@@ -141,4 +141,22 @@ function clampRating(val) {
     return Math.max(0, Math.min(5, n));
 }
 
+// scroll to top button
+const scrollTopBtn = document.querySelector('.scroll-top');
+const SHOW_AFTER = 300;
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > SHOW_AFTER) {
+        scrollTopBtn.classList.add('is-on');
+    } else {
+        scrollTopBtn.classList.remove('is-on');
+    }
+    });
+
+    scrollTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
 
