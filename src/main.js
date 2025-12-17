@@ -1,3 +1,5 @@
+import './css/styles.css';
+
 // section success-stories
 import { initFeedbackSection } from './js/success-stories.js';
 document.addEventListener('DOMContentLoaded', initFeedbackSection);
