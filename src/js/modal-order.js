@@ -88,7 +88,7 @@ form.addEventListener('submit', async e => {
 
   try {
     // ✅ axios POST /orders
-    console.log('Submitting order with animalId:', currentPetId);
+
     await createOrder(orderData);
 
     // ✅ toast success
