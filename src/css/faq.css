@@ -64,7 +64,7 @@
   height: 64px;
 }
 .ac-trigger span {
-  width: 239px;
+  max-width: 239px;
   flex: 1;
   word-break: break-word;
   font-weight: 700;
@@ -197,8 +197,10 @@
     margin-bottom: 80px;
   }
 
+  
+
   .ac-trigger span {
-    width: auto;
+    max-width: 608px;
     font-size: 16px;
   }
 }
@@ -222,6 +224,7 @@
   }
 
   .ac-trigger span {
+    max-width: 768px;
     font-size: 18px;
   }
 
