@@ -11,14 +11,16 @@
 }
 
 .faq-title {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 700;
   font-size: 36px;
   line-height: 1.2;
-  margin-bottom: 40px;
-  font-weight: 700;
   letter-spacing: -0.01em;
   text-align: center;
   color: #02060a;
+  margin-bottom: 40px;
 }
+
 .container,
 .faq,
 .faq-container,
@@ -32,7 +34,7 @@
 }
 .ac {
   background-color: #eee9e3 !important;
-  margin-bottom: 16px;
+  margin-bottom: 16px !important;
   border-radius: 8px;
   overflow: hidden;
   border: none;
@@ -62,16 +64,43 @@
   height: 64px;
 }
 .ac-trigger span {
+  width: 239px;
   flex: 1;
   word-break: break-word;
   font-weight: 700;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.5;
   margin-right: 24px;
   font-family: 'IBM Plex Sans', sans-serif;
   color: #02060a;
   display: flex;
   align-items: center;
+}
+
+#ac-trigger-0,
+#ac-trigger-1,
+#ac-trigger-2,
+#ac-trigger-3,
+#ac-trigger-4 {
+  padding: 20px 24px;
+}
+
+#ac-panel-0 div,
+#ac-panel-1 div,
+#ac-panel-2 div,
+#ac-panel-3 div,
+#ac-panel-4 div {
+  padding: 0;
+}
+
+.ac-text p,
+.ac-text ol,
+.ac-text ul {
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  color: #02060a;
 }
 
 .faq__icon {
@@ -113,7 +142,7 @@
 }
 
 .ac.is-active .ac-panel {
-  padding: 16px 24px 24px;
+  padding: 0 24px 24px;
 }
 
 .ac-text {
@@ -150,34 +179,55 @@
 }
 
 /* ====== Responsive ====== */
-@media (min-width: 768px) {
+@media screen and (min-width: 768px) {
   .faq-container {
-    max-width: 640px;
+    max-width: 768px;
     padding: 0 32px;
   }
 
   .faq-title {
-    font-size: 28px;
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    text-align: center;
+    color: #02060a;
+
+    margin-bottom: 80px;
+  }
+
+  .ac-trigger span {
+    width: auto;
+    font-size: 16px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .faq {
+    padding: 80px 64px;
+  }
+
+  .faq-container {
+    min-width: 864px;
+    padding: 0;
+  }
+
+  .container.faq-container {
+    margin: 0 auto;
+  }
+
+  .faq-title {
+    font-size: 48px;
   }
 
   .ac-trigger span {
     font-size: 18px;
   }
 
-  .ac-text {
-    font-size: 15px;
-  }
-}
-
-@media (min-width: 1044px) {
-  .faq-container {
-    max-width: 720px;
-  }
-}
-
-@media (min-width: 1440px) {
-  .faq-container {
-    max-width: 800px;
-    padding: 0 80px;
+  .ac-text p,
+  .ac-text ol,
+  .ac-text ul {
+    font-size: 16px;
   }
 }
