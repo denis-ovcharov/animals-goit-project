@@ -1,6 +1,9 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 import { hideLoader, showLoader } from './pets-list';
+
+import spriteUrl from '../img/sprite.svg?url';
+
 export let petModalLightbox = null;
 export function openPetModal(animal) {
   petModalLightbox = basicLightbox.create(
@@ -8,7 +11,7 @@ export function openPetModal(animal) {
       <div class="pet-modal">
         <button class="modal-close-btn">
           <svg class="icon-close-btn" width="18" height="18">
-            <use href="/animals-goit-project/img/sprite.svg#icon-close-btn"></use>
+            <use href="${spriteUrl}#icon-close-btn"></use>
           </svg>
         </button>
         <img class="pet-modal-img"src="${animal.image}" alt="${animal.name}">
