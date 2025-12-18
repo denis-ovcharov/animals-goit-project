@@ -8,7 +8,7 @@ export function openModalOrder() {
   <div class="modal-order">
     <button class="modal-order-close-btn" data-modal-order-close>
       <svg class="modal-order-icon" width="8" height="8">
-        <use href="./img/sprite.svg#icon-close-btn"></use>
+        <use href="/animals-goit-project/img/sprite.svg#icon-close-btn"></use>
       </svg>
     </button>
     <h2 class="modal-order-title">
