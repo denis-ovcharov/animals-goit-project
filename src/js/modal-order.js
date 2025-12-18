@@ -3,6 +3,8 @@ import 'izitoast/dist/css/iziToast.min.css';
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
 
+import spriteUrl from '../img/sprite.svg?url';
+
 import { createOrder } from './api.js';
 import { petModalLightbox } from './modal-animal-details.js';
 import { hideLoader, showLoader } from './pets-list';
@@ -24,7 +26,7 @@ export function openModalOrder(animalId) {
     <div class="modal-order">
       <button class="modal-order-close-btn" type="button" aria-label="Close">
         <svg class="modal-order-icon" width="8" height="8">
-          <use href="./img/sprite.svg#icon-close-btn"></use>
+          <use href="${spriteUrl}#icon-close-btn"></use>
         </svg>
       </button>
 
