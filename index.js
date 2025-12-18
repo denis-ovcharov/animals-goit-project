@@ -113,7 +113,7 @@ import{A as V,a as y,S as H,N as _,P as T,i as u,b as F}from"./assets/vendor-CyB
 
       <button class="pet-modal-btn" data-animal-id="${e._id}">Взяти додому</button>
     </div>
-  `,{onShow:t=>{document.body.style.overflow="hidden",t.element().querySelector(".pet-modal-close").addEventListener("click",()=>t.close()),t.element().querySelector(".pet-modal-btn").addEventListener("click",()=>t.close()),document.addEventListener("keydown",P)},onClose:()=>{document.body.style.overflow="visible",document.removeEventListener("keydown",P)}}),p.show()}function P(e){e.key==="Escape"&&p.close()}function pe(e){let t=e.replace(/\D/g,"");return t.length===10&&t.startsWith("0")&&(t="38"+t),t}function me(e){const t=F.create(`
+  `,{onShow:t=>{const s=document.querySelector(".basicLightbox .pet-modal");s&&(s.style.overflow="auto"),document.body.style.overflow="hidden",t.element().querySelector(".pet-modal-close").addEventListener("click",()=>t.close()),t.element().querySelector(".pet-modal-btn").addEventListener("click",()=>t.close()),document.addEventListener("keydown",P)},onClose:()=>{document.body.style.overflow="visible",document.removeEventListener("keydown",P)}}),p.show()}function P(e){e.key==="Escape"&&p.close()}function pe(e){let t=e.replace(/\D/g,"");return t.length===10&&t.startsWith("0")&&(t="38"+t),t}function me(e){const t=F.create(`
     <div class="modal-order">
       <button class="modal-order-close-btn" type="button" aria-label="Close">
         <svg class="modal-order-icon" width="8" height="8">
