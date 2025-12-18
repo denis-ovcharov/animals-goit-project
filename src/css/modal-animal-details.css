@@ -39,14 +39,17 @@
     height: 295px;
     object-fit: cover;
     border-radius: 8px;
+    margin-bottom: 32px;
+
 }
 
 .information {
     display: flex;
     flex-direction: column;
+    max-width: 576px;
 }
 
-.pet-type {
+.pet-type-modal {
     font-weight: 400;
     font-size: 12px;
     line-height: 1.5;
@@ -54,7 +57,7 @@
     margin-bottom: 8px;
 }
 
-.pet-name {
+.pet-name-modal {
     font-family: "Open Sans", sans-serif;
     font-weight: 700;
     font-size: 32px;
@@ -64,7 +67,7 @@
     margin-bottom: 8px;
 }
 
-.pet-meta {
+.pet-meta-modal {
     display: flex;
     gap: 16px;
     font-weight: 400;
@@ -158,7 +161,7 @@
     }
 }
 
-@media (min-width: 1158px) {
+@media (min-width: 1440px) {
     .pet-modal {
         width: 1312px;
         padding: 64px;
@@ -168,15 +171,15 @@
         width: 576px;
     }
 
-    .pet-type {
+    .pet-type-modal {
         font-size: 14px;
     }
 
-    .pet-name {
+    .pet-name-modal {
         font-size: 40px;
     }
 
-    .pet-meta {
+    .pet-meta-modal {
         font-size: 14px;
     }
 

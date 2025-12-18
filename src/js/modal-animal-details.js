@@ -1,12 +1,12 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
-import { hideLoader, showLoader } from './pets-list';
 
 export let petModalLightbox = null;
 
 export function openPetModal(animal) {
   petModalLightbox = basicLightbox.create(
-    `<div class="pet-modal">
+    `
+   <div class="pet-modal">
     <button class="pet-modal-close" type="button">
         <svg class="icon-close-btn" width="18" height="18">
           <use href="../img/sprite.svg#icon-close-btn"></use>
@@ -19,9 +19,9 @@ export function openPetModal(animal) {
     />
 
     <div class="information">
-      <div class="pet-type">${animal.species}</div>
-      <h3 class="pet-name">${animal.name}</h3>
-      <div class="pet-meta">
+      <div class="pet-type-modal">${animal.species}</div>
+      <h3 class="pet-name-modal">${animal.name}</h3>
+      <div class="pet-meta-modal">
        <span>${animal.age}</span>
        <span>${animal.gender}</span>
      </div>
@@ -43,15 +43,14 @@ export function openPetModal(animal) {
 
       <button class="pet-modal-btn" data-animal-id="${animal._id}">Взяти додому</button>
     </div>
-    `,
-
+  `,
     {
       onShow: instance => {
         document.body.style.overflow = 'hidden';
 
         instance
           .element()
-          .querySelector('.modal-close-btn')
+          .querySelector('.pet-modal-close')
           .addEventListener('click', () => instance.close());
 
         instance
