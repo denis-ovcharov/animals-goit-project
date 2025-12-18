@@ -1,4 +1,17 @@
-import 'normalize.css';
+import './js/header';
 import './css/styles.css';
 
 import './js/faq.js';
+// section success-stories
+import { initFeedbackSection } from './js/success-stories.js';
+document.addEventListener('DOMContentLoaded', initFeedbackSection);
+// end section success-stories
+
+// section about-us
+import { initAboutUsSection } from './js/about-us.js';
+document.addEventListener('DOMContentLoaded', initAboutUsSection);
+// end section about-us
+
+
+import { initPetsList} from './js/pets-list.js';
+document.addEventListener('DOMContentLoaded', initPetsList);
