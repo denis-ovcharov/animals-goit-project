@@ -1,4 +1,4 @@
-import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB7JiL4.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const r of o)if(r.type==="childList")for(const i of r.addedNodes)i.tagName==="LINK"&&i.rel==="modulepreload"&&n(i)}).observe(document,{childList:!0,subtree:!0});function s(o){const r={};return o.integrity&&(r.integrity=o.integrity),o.referrerPolicy&&(r.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?r.credentials="include":o.crossOrigin==="anonymous"?r.credentials="omit":r.credentials="same-origin",r}function n(o){if(o.ep)return;o.ep=!0;const r=s(o);fetch(o.href,r)}})();const E=document.getElementById("mobile-menu"),G=document.getElementById("data-burger-close");G.addEventListener("click",()=>{E.classList.remove("is-open"),document.body.style.overflow="visible"});const V=document.getElementById("data-burger-open");V.addEventListener("click",()=>{E.classList.add("is-open"),document.body.style.overflow="hidden"});const W=document.querySelectorAll(".nav-link, .nav-btn-link");W.forEach(e=>{e.addEventListener("click",()=>{E.classList.remove("is-open"),document.body.style.overflow="visible"})});function T(){window.innerWidth>=1440&&(E.classList.remove("is-open"),document.body.style.overflow="visible")}T();window.addEventListener("resize",T);const Y=[{question:"Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати хвостика додому?",answer:`
+import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB7JiL4.js";(function(){const t=document.createElement("link").relList;if(t&&t.supports&&t.supports("modulepreload"))return;for(const o of document.querySelectorAll('link[rel="modulepreload"]'))n(o);new MutationObserver(o=>{for(const i of o)if(i.type==="childList")for(const r of i.addedNodes)r.tagName==="LINK"&&r.rel==="modulepreload"&&n(r)}).observe(document,{childList:!0,subtree:!0});function s(o){const i={};return o.integrity&&(i.integrity=o.integrity),o.referrerPolicy&&(i.referrerPolicy=o.referrerPolicy),o.crossOrigin==="use-credentials"?i.credentials="include":o.crossOrigin==="anonymous"?i.credentials="omit":i.credentials="same-origin",i}function n(o){if(o.ep)return;o.ep=!0;const i=s(o);fetch(o.href,i)}})();const E=document.getElementById("mobile-menu"),G=document.getElementById("data-burger-close");G.addEventListener("click",()=>{E.classList.remove("is-open"),document.body.style.overflow="visible"});const V=document.getElementById("data-burger-open");V.addEventListener("click",()=>{E.classList.add("is-open"),document.body.style.overflow="hidden"});const W=document.querySelectorAll(".nav-link, .nav-btn-link");W.forEach(e=>{e.addEventListener("click",()=>{E.classList.remove("is-open"),document.body.style.overflow="visible"})});function T(){window.innerWidth>=1440&&(E.classList.remove("is-open"),document.body.style.overflow="visible")}T();window.addEventListener("resize",T);const Y=[{question:"Я мрію про пухнастика! Що мені потрібно зробити, щоб забрати хвостика додому?",answer:`
     <p>Це чудово, що ви готові подарувати дім одному з наших підопічних! Ми дуже раді будемо вам у цьому допомогти. Процес «усиновлення» у нас простий та зрозумілий:</p>
     <ol class="no-bullets">
       <li> Оберіть друга: Придивіться до наших хвостиків у розділі «Знайди друга».</li>
@@ -52,7 +52,7 @@ import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB
         <div class="ac-text">${e.answer}</div>
       </div>
     </div>
-  `).join("");new z("#faqAccordion",{duration:300,showMultiple:!1});document.querySelectorAll(".ac-trigger").forEach(e=>{e.addEventListener("click",()=>{const t=e.parentElement.nextElementSibling;t.style.maxHeight?t.style.maxHeight=null:t.style.maxHeight=t.scrollHeight+"px"})});const q="https://paw-hut.b.goit.study",Q=`${q}/api/animals`,X=`${q}/api/categories`,J=`${q}/api/orders`,Z=`${q}/api/feedbacks`;async function ee({page:e=1,limit:t=10,categoryId:s}){const n={page:e,limit:t};return s&&(n.categoryId=s),(await L.get(Q,{params:n})).data}async function te(){return(await L.get(X)).data}async function se(e){return(await L.post(J,e)).data}async function oe(e=10,t=1){return(await L.get(Z,{params:{page:t,limit:e}})).data}async function ne(){const e=document.querySelector("#feedback");if(!e)return;const t=e.querySelector(".swiper.feedback-swiper"),s=e.querySelector(".swiper-wrapper"),n=e.querySelector(".feedback-swiper-pagination"),o=e.querySelector(".feedback-swiper-button-next"),r=e.querySelector(".feedback-swiper-button-prev");e.querySelector(".loader");try{const i=Math.floor(Math.random()*9)+1,l=(await oe(5,i)).feedbacks;if(!Array.isArray(l)||l.length<3)throw new Error("Not enough feedbacks (min 3 required)");s.innerHTML=l.map(re).join(""),new O(t,{modules:[I,H],speed:1e3,slidesPerView:1,spaceBetween:16,loop:!1,resistanceRatio:.85,touchRatio:1.2,breakpoints:{768:{slidesPerView:2,spaceBetween:32},1440:{slidesPerView:2,spaceBetween:32}},pagination:{el:n,clickable:!0,dynamicBullets:!0},navigation:{nextEl:o,prevEl:r,disabledClass:"is-disabled"}})}catch(i){console.error(i),u.error({title:"Error",message:i.message,position:"topRight"})}}function re(e){const t=(e==null?void 0:e.author)??"User",s=(e==null?void 0:e.description)??"",n=ie((e==null?void 0:e.rate)??0),o=Math.floor(n),r=n%1>=.5,i=`rating value-${o}${r?" half":""} star-icon`,c=Array.from({length:5}).map(()=>`
+  `).join("");new z("#faqAccordion",{duration:300,showMultiple:!1});document.querySelectorAll(".ac-trigger").forEach(e=>{e.addEventListener("click",()=>{const t=e.parentElement.nextElementSibling;t.style.maxHeight?t.style.maxHeight=null:t.style.maxHeight=t.scrollHeight+"px"})});const q="https://paw-hut.b.goit.study",Q=`${q}/api/animals`,X=`${q}/api/categories`,J=`${q}/api/orders`,Z=`${q}/api/feedbacks`;async function ee({page:e=1,limit:t=10,categoryId:s}){const n={page:e,limit:t};return s&&(n.categoryId=s),(await L.get(Q,{params:n})).data}async function te(){return(await L.get(X)).data}async function se(e){return(await L.post(J,e)).data}async function oe(e=10,t=1){return(await L.get(Z,{params:{page:t,limit:e}})).data}async function ne(){const e=document.querySelector("#feedback");if(!e)return;const t=e.querySelector(".swiper.feedback-swiper"),s=e.querySelector(".swiper-wrapper"),n=e.querySelector(".feedback-swiper-pagination"),o=e.querySelector(".feedback-swiper-button-next"),i=e.querySelector(".feedback-swiper-button-prev");e.querySelector(".loader");try{const r=Math.floor(Math.random()*9)+1,l=(await oe(5,r)).feedbacks;if(!Array.isArray(l)||l.length<3)throw new Error("Not enough feedbacks (min 3 required)");s.innerHTML=l.map(ie).join(""),new O(t,{modules:[I,H],speed:1e3,slidesPerView:1,spaceBetween:16,loop:!1,resistanceRatio:.85,touchRatio:1.2,breakpoints:{768:{slidesPerView:2,spaceBetween:32},1440:{slidesPerView:2,spaceBetween:32}},pagination:{el:n,clickable:!0,dynamicBullets:!0},navigation:{nextEl:o,prevEl:i,disabledClass:"is-disabled"}})}catch(r){console.error(r),u.error({title:"Error",message:r.message,position:"topRight"})}}function ie(e){const t=(e==null?void 0:e.author)??"User",s=(e==null?void 0:e.description)??"",n=re((e==null?void 0:e.rate)??0),o=Math.floor(n),i=n%1>=.5,r=`rating value-${o}${i?" half":""} star-icon`,c=Array.from({length:5}).map(()=>`
         <div class="star">
             <svg class="star-empty" aria-hidden="true">
                 <use href="#star-empty"></use>
@@ -66,7 +66,7 @@ import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB
         </div>`).join("");return`
         <div class="swiper-slide">
             <div class="feedback-card">
-                <div class="${i}" aria-label="Rating: ${n} out of 5">
+                <div class="${r}" aria-label="Rating: ${n} out of 5">
                     <div class="star-container">
                         ${c}
                     </div>
@@ -75,7 +75,7 @@ import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB
                 <p class="feedback-author">${t}</p>
             </div>
         </div>
-    `}function ie(e){const t=Number(e);return Number.isFinite(t)?Math.max(0,Math.min(5,t)):0}const M=document.querySelector(".scroll-top"),ae=300;window.addEventListener("scroll",()=>{window.scrollY>ae?M.classList.add("is-on"):M.classList.remove("is-on")});M.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});function le(){const e=document.querySelector("#about-us");if(!e)return;const t=e.querySelector(".swiper.mySwiper"),s=e.querySelector(".swiper-button-next"),n=e.querySelector(".swiper-button-prev"),o=e.querySelector(".swiper-pagination");new O(t,{modules:[I,H],cssMode:!1,navigation:{nextEl:s,prevEl:n},pagination:{el:o,clickable:!0,dynamicBullets:!1},mousewheel:!0,keyboard:!0,speed:1e3,parallax:!0})}const F="/animals-goit-project/assets/sprite-BFbGGHrj.svg";let m=null;function ce(e){m=_.create(`
+    `}function re(e){const t=Number(e);return Number.isFinite(t)?Math.max(0,Math.min(5,t)):0}const M=document.querySelector(".scroll-top"),ae=300;window.addEventListener("scroll",()=>{window.scrollY>ae?M.classList.add("is-on"):M.classList.remove("is-on")});M.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});function le(){const e=document.querySelector("#about-us");if(!e)return;const t=e.querySelector(".swiper.mySwiper"),s=e.querySelector(".swiper-button-next"),n=e.querySelector(".swiper-button-prev"),o=e.querySelector(".swiper-pagination");new O(t,{modules:[I,H],cssMode:!1,navigation:{nextEl:s,prevEl:n},pagination:{el:o,clickable:!0,dynamicBullets:!1},mousewheel:!0,keyboard:!0,speed:1e3,parallax:!0})}const F="/animals-goit-project/assets/sprite-BFbGGHrj.svg";let m=null;function ce(e){m=_.create(`
       <div class="pet-modal">
         <button class="modal-close-btn">
           <svg class="icon-close-btn" width="18" height="18">
@@ -83,28 +83,30 @@ import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB
           </svg>
         </button>
         <img class="pet-modal-img"src="${e.image}" alt="${e.name}">
-        <p class="pet-modal-species">${e.species}</p>
-        <h3 class="pet-modal-title">${e.name}</h3>
-        <div class="pet-info-wrap">
-          <p class="pet-modal-age">${e.age}</p>
-          <p class="pet-modal-gender">${e.gender}</p>
+        <div class="pet-modal-decor">
+          <p class="pet-modal-species">${e.species}</p>
+          <h3 class="pet-modal-title">${e.name}</h3>
+          <div class="pet-info-wrap">
+            <p class="pet-modal-age">${e.age}</p>
+            <p class="pet-modal-gender">${e.gender}</p>
+          </div>
+          <ul class="pet-info-list">
+            <li>
+              <h3 class="pet-info-title">Опис:</h3>
+              <p class="pet-modal-info">${e.description}</p>
+            </li>
+            <li><h3 class="pet-info-title">Здоров'я:</h3>
+              <p class="pet-modal-info">${e.healthStatus}</p>
+            </li>
+            <li>
+              <h3 class="pet-info-title">Поведінка:</h3>
+              <p class="pet-modal-info">${e.behavior}</p>
+            </li>
+          </ul>
+          <button class="pet-modal-btn" data-animal-id="${e._id}">Взяти додому</button>
         </div>
-        <ul class="pet-info-list">
-          <li>
-            <h3 class="pet-info-title">Опис:</h3>
-            <p class="pet-modal-info">${e.description}</p>
-          </li>
-          <li><h3 class="pet-info-title">Здоров'я:</h3>
-            <p class="pet-modal-info">${e.healthStatus}</p>
-          </li>
-          <li>
-            <h3 class="pet-info-title">Поведінка:</h3>
-            <p class="pet-modal-info">${e.behavior}</p>
-          </li>
-        </ul>
-        <button class="pet-modal-btn"  data-animal-id="${e._id}">Взяти додому</button>
       </div>
-    `,{onShow:t=>{document.body.style.overflow="hidden",t.element().querySelector(".modal-close-btn").addEventListener("click",()=>t.close())},onClose:t=>{document.body.style.overflow="visible",y()}}),v(),m.show()}function de(e){let t=e.replace(/\D/g,"");return t.length===10&&t.startsWith("0")&&(t="38"+t),t}function ue(e){const t=_.create(`
+    `,{onShow:t=>{document.body.style.overflow="hidden",t.element().querySelector(".modal-close-btn").addEventListener("click",()=>t.close())},onClose:t=>{document.body.style.overflow="visible",y()}}),b(),m.show()}function de(e){let t=e.replace(/\D/g,"");return t.length===10&&t.startsWith("0")&&(t="38"+t),t}function ue(e){const t=_.create(`
     <div class="modal-order">
       <button class="modal-order-close-btn" type="button" aria-label="Close">
         <svg class="modal-order-icon" width="8" height="8">
@@ -151,20 +153,20 @@ import{A as z,a as L,S as O,N as I,P as H,i as u,b as _}from"./assets/vendor-CyB
         <button class="form-submit-btn" type="submit">Надіслати</button>
       </form>
     </div>
-    `,{onShow:s=>{document.body.style.overflow="hidden";const n=s.element(),o=n.querySelector(".modal-order-close-btn"),r=n.querySelector("[data-modal-order-form]"),i=n.querySelector("#user-name"),c=n.querySelector("#user-phone"),l=n.querySelector("#user-comment"),h=n.querySelector(".form-submit-btn");o.addEventListener("click",()=>s.close());const g=p=>{p.key==="Escape"&&s.close()};document.addEventListener("keydown",g),s._onEscClose=g,r.addEventListener("submit",async p=>{var C,R,A;p.preventDefault();const k=i.value.trim(),B=de(c.value),$=l.value.trim();if(!e){u.error({message:"Не обрано тварину",position:"topRight"});return}if(!k||k.length>32){u.error({message:"Імʼя обовʼязкове (до 32 символів)",position:"topRight"}),i.focus();return}if(!/^[0-9]{12}$/.test(B)){u.error({message:"Телефон має містити 12 цифр (приклад: 380955559922)",position:"topRight"}),c.focus();return}if($&&$.length>500){u.error({message:"Коментар не може перевищувати 500 символів",position:"topRight"}),l.focus();return}const D={name:k,phone:B,animalId:e,comment:$||void 0};try{h.disabled=!0,v(),await se(D),u.success({title:"Успішно",message:"Заявку відправлено",position:"topRight"}),s.close()}catch(d){console.error(((C=d==null?void 0:d.response)==null?void 0:C.data)||d.message),u.error({title:"Помилка",message:((A=(R=d==null?void 0:d.response)==null?void 0:R.data)==null?void 0:A.message)||"Не вдалося відправити заявку",position:"topRight"})}finally{y(),h.disabled=!1}})},onClose:s=>{document.body.style.overflow="visible",y(),s!=null&&s._onEscClose&&document.removeEventListener("keydown",s._onEscClose)}});m==null||m.close(),v(),t.show()}//!=============================================================
-let f=1,P=1,b=8,j="",x=[];//!=============================================================
-async function pe(){const e=await te(),t=["Собаки","Коти","Кролики","Гризуни","Птахи","Тварини з особливими потребами","Терміново шукають дім"],s=[...e].sort((n,o)=>{const r=t.indexOf(n.name),i=t.indexOf(o.name);return r===-1?1:i===-1?-1:r-i});me(s),await S()}//!=============================================================
+    `,{onShow:s=>{document.body.style.overflow="hidden";const n=s.element(),o=n.querySelector(".modal-order-close-btn"),i=n.querySelector("[data-modal-order-form]"),r=n.querySelector("#user-name"),c=n.querySelector("#user-phone"),l=n.querySelector("#user-comment"),h=n.querySelector(".form-submit-btn");o.addEventListener("click",()=>s.close());const g=p=>{p.key==="Escape"&&s.close()};document.addEventListener("keydown",g),s._onEscClose=g,i.addEventListener("submit",async p=>{var C,R,A;p.preventDefault();const k=r.value.trim(),B=de(c.value),$=l.value.trim();if(!e){u.error({message:"Не обрано тварину",position:"topRight"});return}if(!k||k.length>32){u.error({message:"Імʼя обовʼязкове (до 32 символів)",position:"topRight"}),r.focus();return}if(!/^[0-9]{12}$/.test(B)){u.error({message:"Телефон має містити 12 цифр (приклад: 380955559922)",position:"topRight"}),c.focus();return}if($&&$.length>500){u.error({message:"Коментар не може перевищувати 500 символів",position:"topRight"}),l.focus();return}const D={name:k,phone:B,animalId:e,comment:$||void 0};try{h.disabled=!0,b(),await se(D),u.success({title:"Успішно",message:"Заявку відправлено",position:"topRight"}),s.close()}catch(d){console.error(((C=d==null?void 0:d.response)==null?void 0:C.data)||d.message),u.error({title:"Помилка",message:((A=(R=d==null?void 0:d.response)==null?void 0:R.data)==null?void 0:A.message)||"Не вдалося відправити заявку",position:"topRight"})}finally{y(),h.disabled=!1}})},onClose:s=>{document.body.style.overflow="visible",y(),s!=null&&s._onEscClose&&document.removeEventListener("keydown",s._onEscClose)}});m==null||m.close(),b(),t.show()}//!=============================================================
+let f=1,P=1,v=8,j="",x=[];//!=============================================================
+async function pe(){const e=await te(),t=["Собаки","Коти","Кролики","Гризуни","Птахи","Тварини з особливими потребами","Терміново шукають дім"],s=[...e].sort((n,o)=>{const i=t.indexOf(n.name),r=t.indexOf(o.name);return i===-1?1:r===-1?-1:i-r});me(s),await S()}//!=============================================================
 const a={petsFilters:document.querySelector(".pets-filters"),petsList:document.querySelector(".pets-list"),loadMoreBtn:document.querySelector(".load-more"),loaderPetsList:document.querySelector(".loader")};//!=============================================================
 function me(e){const s=[{name:"Всі",_id:""},...e].map(o=>`<li class="pets-filters-item"><button class="pets-filters-btn" data-category-id="${o._id}">${o.name}</button></li>`).join("");a.petsFilters.innerHTML=s;const n=document.querySelector(".pets-filters-btn");n&&n.classList.add("pets-filters-btn-active")}//!=============================================================
-function fe(e){const t=e.map(({_id:s,name:n,image:o,species:r,age:i,gender:c,shortDescription:l,categories:h})=>{const g=h.map(p=>`<p class="pet-category">${p.name}</p>`).join("");return`
+function fe(e){const t=e.map(({_id:s,name:n,image:o,species:i,age:r,gender:c,shortDescription:l,categories:h})=>{const g=h.map(p=>`<p class="pet-category">${p.name}</p>`).join("");return`
         <li class="pet-card">
           <img class="pet-img" src="${o}" alt="${n}" />
           <div class="pet-info">
-            <p class="pet-type">${r}</p>
+            <p class="pet-type">${i}</p>
             <h3 class="pet-name">${n}</h3>
             <div class="pet-categories">${g}</div>
             <ul class="pet-meta">
-              <li>${i}</li>
+              <li>${r}</li>
               <li>${c}</li>
             </ul>
             <p class="pet-descr">${l}</p>
@@ -174,8 +176,8 @@ function fe(e){const t=e.map(({_id:s,name:n,image:o,species:r,age:i,gender:c,sho
           </div>
         </li>
       `}).join("");a.petsList.insertAdjacentHTML("beforeend",t)}//!===============================================================================
-async function S(){v();try{const{animals:e,totalItems:t}=await ee({page:f,limit:b,categoryId:j});if(x.push(...e),e.length===0){w();return}fe(e),P=Math.ceil(t/b),f<P?he():w(),f++}catch(e){console.error("API error:",e)}finally{y()}}//!===============================================================================
-function v(){document.body.style.overflowX="hidden",a.loaderPetsList.classList.remove("visually-hidden")}//!===============================================================================
+async function S(){b();try{const{animals:e,totalItems:t}=await ee({page:f,limit:v,categoryId:j});if(x.push(...e),e.length===0){w();return}fe(e),P=Math.ceil(t/v),f<P?he():w(),f++}catch(e){console.error("API error:",e)}finally{y()}}//!===============================================================================
+function b(){document.body.style.overflowX="hidden",a.loaderPetsList.classList.remove("visually-hidden")}//!===============================================================================
 function y(){a.loaderPetsList.classList.add("visually-hidden")}//!===============================================================================
 function he(){a.loadMoreBtn.classList.remove("visually-hidden")}//!===============================================================================
 function w(){a.loadMoreBtn.classList.add("visually-hidden")}//!===============================================================================
@@ -184,5 +186,5 @@ function ge(){const e=document.querySelector(".pet-card");if(!e)return;const t=e
 a.petsFilters.addEventListener("click",e=>{w();const t=e.target.closest(".pets-filters-btn");t&&(document.querySelectorAll(".pets-filters-btn").forEach(s=>s.classList.remove("pets-filters-btn-active")),t.classList.add("pets-filters-btn-active"),j=t.dataset.categoryId||"",f=1,a.petsList.innerHTML="",S())});//!=================================================================================
 document.addEventListener("click",e=>{const t=e.target.closest(".pet-modal-btn");t&&ue(t.dataset.animalId)});//!======================================================================================
 document.addEventListener("click",e=>{if(e.target.classList.contains("pet-details-btn")){const t=e.target.dataset.id,s=x.find(n=>n._id===t);if(!s)return;ce(s)}});//!=======================================================================================
-const N=window.matchMedia("(min-width: 1440px)");function U(e){const t=e.matches?9:8;b!==t&&(b=t,f=1,x=[],a.petsList.innerHTML="",S())}N.addEventListener("change",U);U(N);document.addEventListener("DOMContentLoaded",ne);document.addEventListener("DOMContentLoaded",le);document.addEventListener("DOMContentLoaded",pe);
+const N=window.matchMedia("(min-width: 1440px)");function U(e){const t=e.matches?9:8;v!==t&&(v=t,f=1,x=[],a.petsList.innerHTML="",S())}N.addEventListener("change",U);U(N);document.addEventListener("DOMContentLoaded",ne);document.addEventListener("DOMContentLoaded",le);document.addEventListener("DOMContentLoaded",pe);
 //# sourceMappingURL=index.js.map
