@@ -79,7 +79,7 @@ import{A as R,a as h,S as q,N as S,P as k,i as H,b as $}from"./assets/vendor-CyB
       <div class="pet-modal">
         <button class="modal-close-btn">
           <svg class="icon-close-btn" width="18" height="18">
-            <use href="../img/sprite.svg#icon-close-btn"></use>
+            <use href="./img/sprite.svg#icon-close-btn"></use>
           </svg>
         </button>
         <img class="pet-modal-img"src="${e.image}" alt="${e.name}">
