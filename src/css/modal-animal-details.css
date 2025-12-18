@@ -106,8 +106,8 @@
     
     .pet-modal-img {
         width: 304px;
-        height: auto;
-        object-fit: contain;
+        height: 450px;
+        object-fit: cover;
         margin: 0;
     }
 
@@ -132,6 +132,10 @@
         width: 576px;
     }
 
+    .pet-modal-decor {
+        width: 576px;
+    }
+    
     .pet-modal-btn {
         width: 576px;
         height: 56px;    
