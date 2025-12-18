@@ -1,5 +1,6 @@
 import * as basicLightbox from 'basiclightbox';
 import 'basiclightbox/dist/basicLightbox.min.css';
+import spriteUrl from '../img/sprite.svg?url';
 
 export let petModalLightbox = null;
 
@@ -9,7 +10,7 @@ export function openPetModal(animal) {
    <div class="pet-modal">
     <button class="pet-modal-close" type="button">
         <svg class="icon-close-btn" width="18" height="18">
-          <use href="../img/sprite.svg#icon-close-btn"></use>
+          <use href="${spriteUrl}#icon-close-btn"></use>
         </svg>
       </button>
     <img
@@ -61,7 +62,7 @@ export function openPetModal(animal) {
         document.addEventListener('keydown', onEsc);
       },
       onClose: () => {
-        document.body.style.overflow = '';
+        document.body.style.overflow = 'visible';
         document.removeEventListener('keydown', onEsc);
       },
     }
