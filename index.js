@@ -86,11 +86,7 @@ import{A as G,a as L,S as I,N as H,P as _,i as u,b as T}from"./assets/vendor-CyB
         <div class="pet-modal-decor">
         <p class="pet-modal-species">${e.species}</p>
         <h3 class="pet-modal-title">${e.name}</h3>
-        <div class="pet-info-wrap">
-          <p class="pet-modal-age">${e.age}</p>
-          <p class="pet-modal-gender">${e.gender}</p>
-          <p class="pet-modal-species">${e.species}</p>
-          <h3 class="pet-modal-title">${e.name}</h3>
+
           <div class="pet-info-wrap">
             <p class="pet-modal-age">${e.age}</p>
             <p class="pet-modal-gender">${e.gender}</p>
@@ -158,12 +154,12 @@ import{A as G,a as L,S as I,N as H,P as _,i as u,b as T}from"./assets/vendor-CyB
         <button class="form-submit-btn" type="submit">Надіслати</button>
       </form>
     </div>
-    `,{onShow:s=>{document.body.style.overflow="hidden";const n=s.element(),o=n.querySelector(".modal-order-close-btn"),i=n.querySelector("[data-modal-order-form]"),r=n.querySelector("#user-name"),c=n.querySelector("#user-phone"),l=n.querySelector("#user-comment"),h=n.querySelector(".form-submit-btn");o.addEventListener("click",()=>s.close());const v=p=>{p.key==="Escape"&&s.close()};document.addEventListener("keydown",v),s._onEscClose=v,i.addEventListener("submit",async p=>{var C,R,A;p.preventDefault();const $=r.value.trim(),B=ue(c.value),k=l.value.trim();if(!e){u.error({message:"Не обрано тварину",position:"topRight"});return}if(!$||$.length>32){u.error({message:"Імʼя обовʼязкове (до 32 символів)",position:"topRight"}),r.focus();return}if(!/^[0-9]{12}$/.test(B)){u.error({message:"Телефон має містити 12 цифр (приклад: 380955559922)",position:"topRight"}),c.focus();return}if(k&&k.length>500){u.error({message:"Коментар не може перевищувати 500 символів",position:"topRight"}),l.focus();return}const z={name:$,phone:B,animalId:e,comment:k||void 0};try{h.disabled=!0,b(),await oe(z),u.success({title:"Успішно",message:"Заявку відправлено",position:"topRight"}),s.close()}catch(d){console.error(((C=d==null?void 0:d.response)==null?void 0:C.data)||d.message),u.error({title:"Помилка",message:((A=(R=d==null?void 0:d.response)==null?void 0:R.data)==null?void 0:A.message)||"Не вдалося відправити заявку",position:"topRight"})}finally{y(),h.disabled=!1}})},onClose:s=>{document.body.style.overflow="visible",y(),s!=null&&s._onEscClose&&document.removeEventListener("keydown",s._onEscClose)}});f==null||f.close(),b(),t.show()}//!=============================================================
-let m=1,P=1,g=8,N="",x=[];//!=============================================================
+    `,{onShow:s=>{document.body.style.overflow="hidden";const n=s.element(),o=n.querySelector(".modal-order-close-btn"),i=n.querySelector("[data-modal-order-form]"),r=n.querySelector("#user-name"),c=n.querySelector("#user-phone"),l=n.querySelector("#user-comment"),g=n.querySelector(".form-submit-btn");o.addEventListener("click",()=>s.close());const v=p=>{p.key==="Escape"&&s.close()};document.addEventListener("keydown",v),s._onEscClose=v,i.addEventListener("submit",async p=>{var C,R,A;p.preventDefault();const k=r.value.trim(),B=ue(c.value),$=l.value.trim();if(!e){u.error({message:"Не обрано тварину",position:"topRight"});return}if(!k||k.length>32){u.error({message:"Імʼя обовʼязкове (до 32 символів)",position:"topRight"}),r.focus();return}if(!/^[0-9]{12}$/.test(B)){u.error({message:"Телефон має містити 12 цифр (приклад: 380955559922)",position:"topRight"}),c.focus();return}if($&&$.length>500){u.error({message:"Коментар не може перевищувати 500 символів",position:"topRight"}),l.focus();return}const z={name:k,phone:B,animalId:e,comment:$||void 0};try{g.disabled=!0,b(),await oe(z),u.success({title:"Успішно",message:"Заявку відправлено",position:"topRight"}),s.close()}catch(d){console.error(((C=d==null?void 0:d.response)==null?void 0:C.data)||d.message),u.error({title:"Помилка",message:((A=(R=d==null?void 0:d.response)==null?void 0:R.data)==null?void 0:A.message)||"Не вдалося відправити заявку",position:"topRight"})}finally{y(),g.disabled=!1}})},onClose:s=>{document.body.style.overflow="visible",y(),s!=null&&s._onEscClose&&document.removeEventListener("keydown",s._onEscClose)}});f==null||f.close(),b(),t.show()}//!=============================================================
+let m=1,P=1,h=8,N="",x=[];//!=============================================================
 async function fe(){const e=await se(),t=["Собаки","Коти","Кролики","Гризуни","Птахи","Тварини з особливими потребами","Терміново шукають дім"],s=[...e].sort((n,o)=>{const i=t.indexOf(n.name),r=t.indexOf(o.name);return i===-1?1:r===-1?-1:i-r});me(s),await S()}//!=============================================================
 const a={petsFilters:document.querySelector(".pets-filters"),petsList:document.querySelector(".pets-list"),loadMoreBtn:document.querySelector(".load-more"),loaderPetsList:document.querySelector(".loader")};//!=============================================================
 function me(e){const s=[{name:"Всі",_id:""},...e].map(o=>`<li class="pets-filters-item"><button class="pets-filters-btn" data-category-id="${o._id}">${o.name}</button></li>`).join("");a.petsFilters.innerHTML=s;const n=document.querySelector(".pets-filters-btn");n&&n.classList.add("pets-filters-btn-active")}//!=============================================================
-function ge(e){const t=e.map(({_id:s,name:n,image:o,species:i,age:r,gender:c,shortDescription:l,categories:h})=>{const v=h.map(p=>`<p class="pet-category">${p.name}</p>`).join("");return`
+function he(e){const t=e.map(({_id:s,name:n,image:o,species:i,age:r,gender:c,shortDescription:l,categories:g})=>{const v=g.map(p=>`<p class="pet-category">${p.name}</p>`).join("");return`
         <li class="pet-card">
           <img class="pet-img" src="${o}" alt="${n}" />
           <div class="pet-info">
@@ -181,15 +177,15 @@ function ge(e){const t=e.map(({_id:s,name:n,image:o,species:i,age:r,gender:c,sho
           </div>
         </li>
       `}).join("");a.petsList.insertAdjacentHTML("beforeend",t)}//!===============================================================================
-async function S(){b();try{const{animals:e,totalItems:t}=await te({page:m,limit:g,categoryId:N});if(x.push(...e),e.length===0){w();return}ge(e),P=Math.ceil(t/g),m<P?he():w(),m++}catch(e){console.error("API error:",e)}finally{y()}}//!===============================================================================
+async function S(){b();try{const{animals:e,totalItems:t}=await te({page:m,limit:h,categoryId:N});if(x.push(...e),e.length===0){w();return}he(e),P=Math.ceil(t/h),m<P?ge():w(),m++}catch(e){console.error("API error:",e)}finally{y()}}//!===============================================================================
 function b(){document.body.style.overflowX="hidden",a.loaderPetsList.classList.remove("visually-hidden")}//!===============================================================================
 function y(){a.loaderPetsList.classList.add("visually-hidden")}//!===============================================================================
-function he(){a.loadMoreBtn.classList.remove("visually-hidden")}//!===============================================================================
+function ge(){a.loadMoreBtn.classList.remove("visually-hidden")}//!===============================================================================
 function w(){a.loadMoreBtn.classList.add("visually-hidden")}//!===============================================================================
 a.loadMoreBtn.addEventListener("click",async()=>{w(),await S(),ve()});//!===============================================================================
 function ve(){const e=document.querySelector(".pet-card");if(!e)return;const t=e.getBoundingClientRect().height;window.scrollBy({top:t,left:0,behavior:"smooth"})}//!===============================================================================
 a.petsFilters.addEventListener("click",e=>{w();const t=e.target.closest(".pets-filters-btn");t&&(document.querySelectorAll(".pets-filters-btn").forEach(s=>s.classList.remove("pets-filters-btn-active")),t.classList.add("pets-filters-btn-active"),N=t.dataset.categoryId||"",m=1,a.petsList.innerHTML="",S())});//!=================================================================================
 document.addEventListener("click",e=>{const t=e.target.closest(".pet-modal-btn");t&&pe(t.dataset.animalId)});//!======================================================================================
 document.addEventListener("click",e=>{if(e.target.classList.contains("pet-details-btn")){const t=e.target.dataset.id,s=x.find(n=>n._id===t);if(!s)return;de(s)}});//!=======================================================================================
-const U=window.matchMedia("(min-width: 1440px)");let O=!1;function D(e){const t=e.matches?9:8;if(!O){O=!0,g=t;return}g!==t&&(g=t,m=1,x=[],a.petsList.innerHTML="",S())}U.addEventListener("change",D);D(U);document.addEventListener("DOMContentLoaded",ie);document.addEventListener("DOMContentLoaded",ce);document.addEventListener("DOMContentLoaded",fe);
+const U=window.matchMedia("(min-width: 1440px)");let O=!1;function D(e){const t=e.matches?9:8;if(!O){O=!0,h=t;return}h!==t&&(h=t,m=1,x=[],a.petsList.innerHTML="",S())}U.addEventListener("change",D);D(U);document.addEventListener("DOMContentLoaded",ie);document.addEventListener("DOMContentLoaded",ce);document.addEventListener("DOMContentLoaded",fe);
 //# sourceMappingURL=index.js.map
