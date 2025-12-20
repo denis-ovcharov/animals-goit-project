@@ -15,7 +15,7 @@ openBtn.addEventListener('click', () => {
 });
 
 // Закриття меню при кліку на пункт меню
-const menuLinks = document.querySelectorAll('.nav-link, .nav-btn-link'); 
+const menuLinks = document.querySelectorAll('.nav-link, .nav-btn-link');
 
 menuLinks.forEach(link => {
   link.addEventListener('click', () => {
@@ -24,8 +24,7 @@ menuLinks.forEach(link => {
   });
 });
 
-
-// Закриття меню коли екран більше 1440px 
+// Закриття меню коли екран більше 1440px
 
 function handleResize() {
   if (window.innerWidth >= 1440) {
@@ -34,6 +33,5 @@ function handleResize() {
   }
 }
 handleResize();
-
 
 window.addEventListener('resize', handleResize);

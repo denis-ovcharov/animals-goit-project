@@ -61,6 +61,7 @@ export function openModalOrder(animalId) {
           <label class="form-field-label" for="user-comment">Коментар</label>
           <textarea
             class="form-field-textarea"
+            name="comment"
             id="user-comment"
             placeholder="Напишіть ваш коментар"
           ></textarea>
