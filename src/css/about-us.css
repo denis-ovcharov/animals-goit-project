@@ -341,7 +341,7 @@
     #about-us .swiper-buttons-container {
         position: absolute;
         top: 340px;
-        width: 106%;
+        width: 100%;
         left: 50%;
         transform: translateX(-50%);
         justify-content: space-between;
@@ -373,7 +373,7 @@
 
     #about-us .swiper-buttons-container {
         top: 510px;
-        width: 104%;
+        width: 95%;
     }
 
     #about-us .controls-wrapper{
