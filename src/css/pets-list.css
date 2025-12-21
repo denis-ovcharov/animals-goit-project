@@ -181,3 +181,45 @@
      max-height: 309px; 
   }
 }
+
+/* Пагінація сторінок */
+.pagination {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+.pagination-btn {
+  border: none;
+  background-color: transparent;
+  padding: 12px 24px;
+  width: 58px;
+  height: 48px;
+  font-family: "IBM Plex Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #02060a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.pagination-btn-active {
+  border: 1px solid #b3b4b5;
+  border-radius: 8px;
+}
+.pagination-arrow {
+  border: 1px solid #c3b49d;
+  border-radius: 8px;
+  box-sizing: border-box;
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+}
+
+.pagination-arrow-img {
+  fill: #02060a;
+}
