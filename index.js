@@ -66,9 +66,7 @@ import{A as Y,a as k,S as U,N as F,P as W,i as p,b as j}from"./assets/vendor-CyB
       </div>
     </div>
   `}function me(e){return Array.from({length:5},(t,s)=>{const o=s+1;let n=se;return e>=o?n=te:e>=o-.5&&(n=oe),`
-      <svg class="star" aria-hidden="true">
-        <use href="${n}"></use>
-      </svg>
+      <img class="star" src="${n}" alt="Rating">
     `}).join("")}function ge(e){const t=Number(e);return Number.isFinite(t)?Math.max(0,Math.min(5,t)):0}const x=document.querySelector(".scroll-top"),he=300;window.addEventListener("scroll",()=>{window.scrollY>he?x.classList.add("is-on"):x.classList.remove("is-on")});x.addEventListener("click",()=>{window.scrollTo({top:0,behavior:"smooth"})});function ve(){const e=document.querySelector("#about-us");if(!e)return;const t=e.querySelector(".swiper.mySwiper"),s=e.querySelector(".swiper-button-next"),o=e.querySelector(".swiper-button-prev"),n=e.querySelector(".swiper-pagination");new U(t,{modules:[F,W],cssMode:!1,navigation:{nextEl:s,prevEl:o},pagination:{el:n,clickable:!0,dynamicBullets:!1},mousewheel:!0,keyboard:!0,speed:1e3,parallax:!0})}const E="/animals-goit-project/assets/sprite-BMUmUqG5.svg";let g=null;function be(e){g=j.create(`
    <div class="pet-modal">
     <button class="pet-modal-close" type="button">
