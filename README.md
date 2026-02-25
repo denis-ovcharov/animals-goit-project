@@ -1,99 +1,93 @@
-# 🐾 Хатинка лапок
+# 🐾 Hat of Paws
 
-## 📖 Про проєкт
+## 📖 About the Project
 
-**«Хатинка лапок»** — це навчальний командний front-end проєкт, створений у
-рамках курсу Full-Stack Developer.
+**"Hat of Paws"** is an educational team front-end project created as part of the Full-Stack Developer course.
 
-Проєкт являє собою вебсайт, присвячений допомозі тваринам знайти затишну
-домівку, інформуванню користувачів та демонстрації сучасних підходів до верстки
-й JavaScript-розробки. Сайт містить адаптивний інтерфейс, інтерактивні елементи
-та динамічний контент.
+The project is a website dedicated to helping animals find a cozy home, informing users, and demonstrating modern approaches to layout and JavaScript development. The site features a responsive interface, interactive elements, and dynamic content.
 
 ---
 
-## 🎯 Які задачі вирішує проєкт
+## 🎯 Project Goals
 
-Даний проєкт спрямований на досягнення таких цілей:
+This project is aimed at achieving the following goals:
 
-- розробка адаптивного та інтуїтивно зрозумілого інтерфейсу для користувачів;
-- впровадження інтерактивних елементів (слайдери, кнопки керування, пагінація,
-  форма для контакту);
-- обробка та відображення даних, що надходять із серверної частини;
-- побудова коду з використанням модульного підходу в JavaScript;
-- відпрацювання командної роботи з Git та GitHub;
-- закріплення та поглиблення навичок роботи з актуальними front-end
-  технологіями.
+- developing a responsive and intuitive user interface;
+- implementing interactive elements (sliders, control buttons, pagination, contact form);
+- processing and displaying data received from the backend;
+- building code using a modular approach in JavaScript;
+- practicing teamwork with Git and GitHub;
+- reinforcing and deepening skills with modern front-end technologies.
 
 ---
 
-## 🛠 Використані технології
+## 🛠 Technologies Used
 
-У процесі розробки проєкту були використані такі технології та інструменти:
+The following technologies and tools were used during development:
 
-### Основні:
+### Core:
 
-- **HTML5** — семантична розмітка сторінок
-- **CSS3** — стилізація та адаптивна верстка
-- **JavaScript (ES6+)** — логіка та інтерактивність
+- **HTML5** — semantic page markup
+- **CSS3** — styling and responsive layout
+- **JavaScript (ES6+)** — logic and interactivity
 
-### Інструменти та бібліотеки:
+### Tools & Libraries:
 
-- **Vite** — збірка та локальний dev-сервер
-- **Swiper.js** — реалізація слайдерів
-- **Axios** — робота з HTTP-запитами
-- **Accordion-js** — для створення розгортаних блоків з інформацією.
-- **Css Star Rating** — легко створює власний компонент рейтингу.
-- **iziToast** — сучасний та компактний плагін сповіщень із адаптивною версткою.
-- **Swagger** — для запитів бекенду.
-- **Git / GitHub** — контроль версій та командна робота
+- **Vite** — bundler and local dev server
+- **Swiper.js** — slider implementation
+- **Axios** — HTTP requests
+- **Accordion-js** — collapsible information blocks
+- **Css Star Rating** — custom rating component
+- **iziToast** — modern and compact notification plugin with responsive layout
+- **Swagger** — backend API requests
+- **Git / GitHub** — version control and team collaboration
 
 ---
 
-## ▶️ 🚀 Запуск проєкту локально
+## ▶️ 🚀 Running the Project Locally
 
-1. Клонувати репозиторій:
+1. Clone the repository:
 
 ```bash
 git clone
 ```
 
-2. Встановити залежності:
+2. Install dependencies:
 
 ```bash
 npm install
 ```
 
-3. Запустити проєкт у режимі розробки:
+3. Start the project in development mode:
 
 ```bash
 npm run dev
 ```
 
-5. Відкрити проєкт у браузері:
+5. Open the project in your browser:
 
 ```bash
-http://localhost:5173 (*опціонально)
+http://localhost:5173 (*optional)
 ```
 
 ---
 
-## 👥 Командна робота
+## 👥 Team Collaboration
 
-### Проєкт розроблявся командою з використанням:
+### The project was developed by a team using:
 
-        #feature-гілок для виконання окремих задач;
+        #feature branches for individual tasks;
 
-        #pull request’ів для перевірки та обговорення коду;
+        #pull requests for code review and discussion;
 
-        #узгоджених стилістичних і кодових стандартів;
+        #agreed styling and coding standards;
 
-        #code review перед злиттям змін у головну гілку;
+        #code review before merging changes into the main branch;
 
-        #розподілу ролей та відповідальностей між учасниками команди;
+        #distribution of roles and responsibilities among team members;
 
-        #спільного планування задач і контролю прогресу;
+        #joint task planning and progress tracking;
 
-        #регулярної синхронізації змін для уникнення конфліктів у коді.
+        #regular synchronization of changes to avoid code conflicts.
 
 ---
