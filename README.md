@@ -1,4 +1,4 @@
-# 🐾 Hat of Paws
+# 🐾 Hut of Paws
 
 ## 📖 About the Project
 
